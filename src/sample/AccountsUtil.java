@@ -5,10 +5,24 @@ import java.util.HashMap;
 
 public class AccountsUtil {
 
-    public HashMap usernameMap = new HashMap<Integer, String>();
-    private String saveFileName = "testFile";
+    private static HashMap usernameMap = new HashMap<String, Integer>();
+    private String saveFileName = "usernameHash";
 
-    public void saveFile(HashMap<Integer, String> lockedApps){
+    public static String getUser_id() {
+        return user_id;
+    }
+
+    public static void setUser_id(String user_id) {
+        AccountsUtil.user_id = user_id;
+    }
+
+    private static String user_id;
+
+    AccountsUtil(){
+        loadFile();
+    }
+
+    public void saveFile(){
 
         FileOutputStream fileOutputStream;
 
@@ -16,7 +30,7 @@ public class AccountsUtil {
             File file = new File(saveFileName);
             fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream= new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(lockedApps);
+            objectOutputStream.writeObject(usernameMap);
             objectOutputStream.close();
             fileOutputStream.close();
         } catch (Exception e) {
@@ -34,12 +48,21 @@ public class AccountsUtil {
             File file = new File(saveFileName);
             fileInputStream = new FileInputStream(file);
             ObjectInputStream is = new ObjectInputStream(fileInputStream);
-            usernameMap = (HashMap<Integer, String>) is.readObject();
+            usernameMap = (HashMap<String, Integer>) is.readObject();
             is.close();
             fileInputStream.close();
         }catch(Exception e){
-            usernameMap = new HashMap<Integer, String>();
-            saveFile(usernameMap);
+            usernameMap = new HashMap<String, Integer>();
+            saveFile();
         }
+    }
+
+    public boolean contains(String username){
+        return usernameMap.containsKey(username);
+    }
+
+    public void put(String username, Integer id){
+        usernameMap.put(username, id);
+        saveFile();
     }
 }
