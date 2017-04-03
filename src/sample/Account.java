@@ -1,9 +1,11 @@
 package sample;
 
+import java.io.Serializable;
+
 /**
  * Created by Adonay on 4/3/2017.
  */
-public abstract class Account {
+public class Account implements Serializable{
     private String username;
     private int accessLevel;
     private boolean isLoggedIn;

@@ -3,7 +3,6 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 
 /**
  * Created by Adonay on 3/27/2017.
@@ -29,7 +28,7 @@ public class NewAccountController {
             newUsername = newUsernameField.getText();
             accountChoice = accountChoiceBox.getValue().toString();
             if(!accountsUtil.contains(newUsername)){
-                accountsUtil.put(newUsername, 01);
+                accountsUtil.put(newUsername, new Account(newUsername,0));
                 screenUtil.pullUpScreen("Login.fxml", event);
             }else{
                 errorBox.setText("Username taken!");

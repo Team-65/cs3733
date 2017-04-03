@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 public class AccountsUtil {
 
-    private static HashMap usernameMap = new HashMap<String, Integer>();
-    private String saveFileName = "usernameHash";
+    private static HashMap usernameMap = new HashMap<String, Account>();
+    private String saveFileName = "usernameMap";
 
     public static String getUser_id() {
         return user_id;
@@ -48,21 +48,26 @@ public class AccountsUtil {
             File file = new File(saveFileName);
             fileInputStream = new FileInputStream(file);
             ObjectInputStream is = new ObjectInputStream(fileInputStream);
-            usernameMap = (HashMap<String, Integer>) is.readObject();
+            usernameMap = (HashMap<String, Account>) is.readObject();
             is.close();
             fileInputStream.close();
         }catch(Exception e){
-            usernameMap = new HashMap<String, Integer>();
+            usernameMap = new HashMap<String, Account>();
             saveFile();
         }
     }
 
     public boolean contains(String username){
-        return usernameMap.containsKey(username);
+        return usernameMap.containsKey(username.toLowerCase());
     }
 
-    public void put(String username, Integer id){
-        usernameMap.put(username, id);
+    public void put(String username, Account account){
+        usernameMap.put(username.toLowerCase(), account);
+        saveFile();
+    }
+
+    public void clearData(){
+        usernameMap.clear();
         saveFile();
     }
 }

@@ -1,15 +1,13 @@
 package sample;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Modality;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  * Created by Adonay on 3/27/2017.
@@ -18,16 +16,16 @@ public class MainMenuController{
 
     private FXMLLoader fxmlLoader;
 
-    private String username;
-
-
-    public void setUsername(String username) {
-        this.username = username;
-
-    }
-
     @FXML
     private Button openSearchButton, openInboxButton, openNewApplicationButton, logOutButton;
+    @FXML
+    private Text userID;
+
+    private AccountsUtil accountsUtil = new AccountsUtil();
+
+    public void initialize(){
+        userID.setText(accountsUtil.getUser_id());
+    }
 
 
     public void buttonClicked(ActionEvent e) {
