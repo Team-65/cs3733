@@ -23,7 +23,8 @@ public class ScreenUtil {
             stage.initModality(Modality.WINDOW_MODAL);
             stage.setTitle(fxmlName);
             stage.setResizable(false);
-            stage.setScene(new Scene(root1));
+            Scene scene = new Scene(root1);
+            stage.setScene(scene);
             stage.show();
             ((Node)(event.getSource())).getScene().getWindow().hide();
         }
