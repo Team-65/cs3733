@@ -22,10 +22,7 @@ public class ScreenUtil {
             Stage stage = new Stage();
             stage.initModality(Modality.WINDOW_MODAL);
             stage.setTitle(fxmlName);
-            stage.setMinHeight(400);
-            stage.setMinWidth(370);
-            stage.setMaxHeight(400);
-            stage.setMaxWidth(370);
+            stage.setResizable(false);
             stage.setScene(new Scene(root1));
             stage.show();
             ((Node)(event.getSource())).getScene().getWindow().hide();
