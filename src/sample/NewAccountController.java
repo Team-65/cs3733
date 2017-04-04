@@ -27,11 +27,16 @@ public class NewAccountController {
         try{
             newUsername = newUsernameField.getText();
             accountChoice = accountChoiceBox.getValue().toString();
-            if(!accountsUtil.contains(newUsername)){
+
+            if(!accountsUtil.contains(newUsername) && newUsername.length() >= 5){
                 accountsUtil.put(newUsername, new Account(newUsername,0));
                 screenUtil.pullUpScreen("Login.fxml", event);
-            }else{
+            }else if(newUsername.length() < 5){
+                errorBox.setText("User name must be at least five character long");
+            }else if(accountsUtil.contains(newUsername)){
                 errorBox.setText("Username taken!");
+            }else{
+                errorBox.setText("Unknown error!");
             }
         }catch(NullPointerException e){
             errorBox.setText("Please select an account type");
