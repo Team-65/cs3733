@@ -22,7 +22,7 @@
       </font>
     </Text>
     <Button fx:id="guestLoginButton" font="$x1" layoutX="159.0" layoutY="209.0" mnemonicParsing="false" onAction="#guestLogin" prefWidth="113.900390625" text="Guest Login" />
-    <Hyperlink id="createAccountLink" fx:id="newAccountLink" layoutX="50.0" layoutY="255.0" onAction="#createAccount" text="Create a new account">
+    <Hyperlink id="createAccountLink" fx:id="newAccountLink" layoutX="50.0" layoutY="255.0" onAction="#openCreateAccount" text="Create a new account">
       <font>
         <Font name="Segoe UI" size="13.0" />
       </font>

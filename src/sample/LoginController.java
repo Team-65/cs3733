@@ -3,6 +3,8 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -18,20 +20,22 @@ public class LoginController {
     private TextField usernameField, passwordField;
     @FXML
     private Label errorBox;
+    @FXML
+    private Button loginButton;
 
     ScreenUtil screenUtil = new ScreenUtil();
 
     private String username;
     private String password;
     private AccountsUtil aUtil = new AccountsUtil();
-    
+
     @FXML
     public void initialize(){
         usernameField.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 if(event.getCode() == KeyCode.ENTER){
-                    login(new ActionEvent());
+                    openCreateAccount(new ActionEvent());
                 }
             }
         });
@@ -56,7 +60,7 @@ public class LoginController {
            screenUtil.pullUpScreen("MainMenu.fxml", event);
     }
 
-    public void createAccount(ActionEvent event){
+    public void openCreateAccount(ActionEvent event){
 
         screenUtil.pullUpScreen("NewAccount.fxml", event);
 
