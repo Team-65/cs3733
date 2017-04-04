@@ -18,7 +18,7 @@
         <Font name="Segoe UI" size="15.0" fx:id="x1" />
       </font>
     </Button>
-    <Text id="newAccText" layoutX="66.0" layoutY="88.0" scaleX="0.9999955884947944" scaleY="1.014978347407836" strokeType="OUTSIDE" strokeWidth="0.0" text="Create a new application">
+    <Text id="newAccText" layoutX="80.0" layoutY="88.0" scaleX="0.9999955884947944" scaleY="1.014978347407836" strokeType="OUTSIDE" strokeWidth="0.0" text="Create a new account">
       <font>
         <Font name="Segoe UI" size="20.0" />
       </font>
@@ -26,9 +26,9 @@
     <ChoiceBox id="accountType" fx:id="accountChoiceBox" layoutX="154.0" layoutY="175.0" prefWidth="145.0">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
+          <String fx:value="Government Agent" />
+          <String fx:value="Manufacturer" />
+          <String fx:value="Public User" />
         </FXCollections>
       </items>
     </ChoiceBox>
