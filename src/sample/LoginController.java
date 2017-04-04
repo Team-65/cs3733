@@ -35,7 +35,7 @@ public class LoginController {
             @Override
             public void handle(KeyEvent event) {
                 if(event.getCode() == KeyCode.ENTER){
-                    openCreateAccount(new ActionEvent());
+                    login(new ActionEvent());
                 }
             }
         });
