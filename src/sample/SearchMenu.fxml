@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SearchMenuController">
+   <children>
+      <Label layoutX="244.0" layoutY="46.0" text="Search">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="119.0" text="Alcohol Type:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="175.0" text="Tag (optional):">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="Back" layoutX="46.0" layoutY="306.0" mnemonicParsing="false" onAction="#buttonClicked" text="Back" />
+      <Button fx:id="Search" layoutX="456.0" layoutY="296.0" mnemonicParsing="false" onAction="#buttonClicked" text="Search">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <CheckBox fx:id="IsWine" layoutX="193.0" layoutY="119.0" mnemonicParsing="false" text="Wine">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="IsBeer" layoutX="288.0" layoutY="119.0" mnemonicParsing="false" text="Beer">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="IsOther" layoutX="384.0" layoutY="119.0" mnemonicParsing="false" text="Other">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <TextField fx:id="Tags" layoutX="193.0" layoutY="175.0" />
+   </children>
+</Pane>

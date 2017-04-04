@@ -1,4 +1,6 @@
-package sample;
+package sample;/**
+ * Created by Adonay on 3/26/2017.
+ */
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,22 +8,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * Created by Adonay on 3/27/2017.
- */
-public class Main extends Application{
-
+public class Login extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        primaryStage.setTitle("Main Menu");
-        primaryStage.setScene(new Scene(root, 370, 400));
-        primaryStage.setMinHeight(400);
-        primaryStage.setMinWidth(370);
-        primaryStage.setMaxHeight(400);
-        primaryStage.setMaxWidth(370);
-        primaryStage.setMaximized(false);
+        primaryStage.setTitle("Login");
+        primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
 
